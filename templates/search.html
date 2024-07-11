@@ -1,0 +1,13 @@
+
+
+<html>
+    {% include "base.html" %}
+    <center><h1>{{"Search Student"}}</h1>
+ <form method='post' > {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Search</button>
+
+    </form>
+    </center>
+
+    </html>

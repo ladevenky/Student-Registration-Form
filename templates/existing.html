@@ -1,0 +1,36 @@
+<html>
+    {% include "base.html" %}
+
+
+    <center><h1>Registered Students</h1></center>
+    <table align='center' border=2>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>NAME</th>
+                <th>CLASS</th>
+                <th>ADDRESS</th>
+                <th>SCHOOL</th>
+                <th>E-MAIL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in queryset %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ student.s_name }}</td>
+                    <td>{{ student.s_class }}</td>
+                    <td>{{ student.s_addr }}</td>
+                    <td>{{ student.s_school }}</td>
+                    <td>{{ student.s_email }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No registered students found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</html>
+    
+
